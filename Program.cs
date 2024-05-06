@@ -76,7 +76,7 @@ bool IsInputValid(string? guess)
     }
     else if (guess.Length != NumberOfDigits)
     {
-        Console.WriteLine($"Guess must be N digits long.");
+        Console.WriteLine($"Guess must be {NumberOfDigits} digits long.");
         return false;
     }
     return true;
