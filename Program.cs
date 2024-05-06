@@ -12,12 +12,11 @@ Dictionary<int, List<int>> target = GenerateRandomTarget(out string targetString
 
 while(guessesLeft > 0 && !IsMatch)
 {
-    List<char> hint = new();
     Console.Write($"Enter your guess. {guessesLeft} guesses left: ");
     string? guess = Console.ReadLine();
     if(IsInputValid(guess))
     {
-        hint = GenerateHint(guess!, out IsMatch);
+        List<char> hint = GenerateHint(guess!, out IsMatch);
         if (!IsMatch) PrintHint(hint);
         guessesLeft--;
     }
