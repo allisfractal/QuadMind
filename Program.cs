@@ -7,8 +7,8 @@ const int NumberOfGuesses = 10;
 Random rand = new();
 bool IsMatch = false;
 int guessesLeft = NumberOfGuesses;
+PrintHeader();
 Dictionary<int, List<int>> target = GenerateRandomTarget(out string targetString);
-PrintHeader(targetString);
 
 while(guessesLeft > 0 && !IsMatch)
 {
@@ -91,9 +91,8 @@ void PrintHint(List<char> unsortedHint)
     }
     Console.WriteLine();
 }
-void PrintHeader(string targetString)
+void PrintHeader()
 {
-    Console.WriteLine($"The secret target is: {targetString}");
     Console.WriteLine($"Welcome. You will have {NumberOfGuesses} guesses to guess a {NumberOfDigits} digit number with each digit between 1 and {MaxDigitValue}.");
 
 }
